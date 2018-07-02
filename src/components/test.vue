@@ -77,7 +77,7 @@ var data = {
   age: 0,
   city: '北京',
   jsondata,
-  jsondata2:jsondata
+  jsondata2: jsondata
 }
 export default {
   data () {
@@ -90,20 +90,20 @@ export default {
       this.age = 100
       this.$axios({
         method: 'get',
-        url: 'https://bird.ioliu.cn/weather?city='+this.city,
+        url: 'https://bird.ioliu.cn/weather?city=' + this.city,
         responseType: 'stream'
       })
-        .then( (response)=> {
-          this.jsondata=response.data
+        .then((response) => {
+          this.jsondata = response.data
         })
     },
     clickfunction2: function (data) {
       this.$axios({
         method: 'get',
-        url: 'http://lkfun.cc:81/md5/sdf/1',
+        url: 'http://lkfun.cc:81/api/guoguo',
         responseType: 'stream'
       })
-        .then( (response)=> {
+        .then((response) => {
           alert(response.data)
         })
     }
