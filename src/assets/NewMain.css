@@ -1,0 +1,16 @@
+body, button, input, select, textarea, h1, h2, h3, h4, h5, h6 {
+    font-family: Microsoft YaHei,'宋体', Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
+}
+body{
+    /*transform: rotate(180deg);*/
+}
+body>div{
+    padding-left:6%;
+    padding-right: 6%;
+}
+footer{
+    /*margin-bottom:0px;*/
+}
+#app {
+  margin-top: 100px;
+}

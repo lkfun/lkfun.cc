@@ -4,7 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import axios from 'axios'
-
+require('./assets/NewMain.css')
 Vue.config.productionTip = false
 Vue.prototype.$axios = axios
 

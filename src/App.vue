@@ -1,22 +1,22 @@
 <template>
   <div id="app">
+    <f-header></f-header>
     <router-view/>
+    <f-footer></f-footer>
   </div>
 </template>
 
 <script>
+import FHeader from './components/Header.vue'
+import FFooter from './components/Footer.vue'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    FHeader,
+    FFooter
+  }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>

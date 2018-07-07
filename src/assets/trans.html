@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width">
+    <meta name="full-screen" content="yes">
+    <meta name="browsermode" content="application">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="x5-page-mode" content="app">
+	<meta name="referrer" content="no-referrer"/>
+    <link href="/favicon.ico" rel="shortcut icon">
+    <link href="/favicon.ico" rel="Bookmark">
+    <title>转换-幻想乡</title>
+    <link href="https://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/flat-ui/2.3.0/css/flat-ui.min.css" rel="stylesheet">
+    <script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/flat-ui/2.2.2/js/vendor/respond.min.js"></script>
+    <script src="https://cdn.bootcss.com/flat-ui/2.2.2/js/vendor/html5shiv.min.js"></script>
+
+    <![endif]-->
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#tansformBtn").click(function(){
+                var before=$("#before").val();
+                var fps=$("#fps").val();
+                var after=0;
+                var h=0;
+                var m=0
+                var s=0;
+                var f=0;
+                try{
+                    before=before.split(":")
+                    var length=before.length-1;
+                    if(length>-1)f=parseInt(before[length]);
+                    if(length>0)s=parseInt(before[length-1]);
+                    if(length>1)m=parseInt(before[length-2]);
+                    if(length>2)h=parseInt(before[length-3]);
+                    after=(h*3600+m*60+s)*(fps)+f;
+                }catch(e){
+                    alert("出错:"+e.message);
+                }
+                $("#after").val(after);
+            });
+            $("#retansformBtn").click(function(){
+                var after=$("#after").val();
+                var fps=$("#fps").val();
+                var before="";
+                try{
+                    var remainder=0;
+                    var result=0
+                    fps=parseInt(fps);
+                    after=parseInt(after);
+                    h=60*60*fps;
+                    m=60*fps;
+
+                    result=parseInt(after/h);
+                    remainder=after%h
+                    before+= (result.toString().length<2?"0"+result:result);
+
+                    result=parseInt(remainder/m);
+                    remainder=remainder%m
+                    before+=":"+ (result.toString().length<2?"0"+result:result);
+
+                    result=parseInt(remainder/fps);
+                    remainder=remainder%fps;
+                    before+=":"+ (result.toString().length<2?"0"+result:result);
+
+                    result=remainder;
+                    before+=":"+ (result.toString().length<2?"0"+result:result);
+
+                }catch(e){
+                    alert("出错:"+e.message);
+                }
+                $("#before").val(before);
+            });
+
+            $("#fps").select2({dropdownCssClass: 'dropdown'});
+        })
+    </script>
+</head>
+<body>
+<!-- /navbar -->
+
+<div class="container" style="">
+    <h1>transform</h1>
+    <div class="row"  style="width: 517px" >
+        <p >
+            <input type="text" class="form-control" id="before">
+        </p>
+        <p>
+            <select id="fps" class=" form-control select-primary select" >
+                <option value="30">30</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="30">60</option>
+            </select>
+            <button class="btn btn-info mrs btn-wide" id="tansformBtn">转换<span class="glyphicon glyphicon-arrow-down"></span></button>
+            <button class="btn btn-danger mrs btn-wide" id="retansformBtn">反向转换<span class="glyphicon glyphicon-arrow-up"></span></button>
+        </p>
+        <p >
+            <input type="text" id="after" class="form-control">
+        </p>
+    </div>
+</div>
+</div>
+
+<footer>
+    <hr>
+    <div class="container" style="text-align:center">
+        <a href="https://www.miitbeian.gov.cn">备案/许可证编号：闽ICP备16018642号</a>
+    </div>
+    <hr>
+</footer>
+
+<script src="https://cdn.bootcss.com/flat-ui/2.2.2/js/flat-ui.min.js"></script>
+</body>
+</html>
