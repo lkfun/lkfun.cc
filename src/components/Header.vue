@@ -3,7 +3,7 @@
 
     <ul class="nav">
         <li v-bind:class="{ active: $route.path==='/' }">
-          <router-link to='/'>Lkfun</router-link>
+          <router-link to='/'>幻想乡</router-link>
         </li>
         <li v-bind:class="{ active: $route.path==='/mc' }">
           <router-link to='/mc'>Mincraft</router-link>

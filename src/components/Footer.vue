@@ -3,6 +3,7 @@
     <hr/>
     <small>Copyright&nbsp;&copy;&nbsp;{{Copyrighttime}}&nbsp;www.lkfun.cc&nbsp;版权所有 </small>
     <br/>
+<small><a href="http://www.beian.miit.gov.cn">备案/许可证编号：闽ICP备16018642号</a></small>
     <hr/>
   </div>
 </template>
