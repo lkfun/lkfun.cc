@@ -5,15 +5,6 @@
         <li v-bind:class="{ active: $route.path==='/' }">
           <router-link to='/'>幻想乡</router-link>
         </li>
-        <li v-bind:class="{ active: $route.path==='/mc' }">
-          <router-link to='/mc'>Mincraft</router-link>
-        </li>
-        <li v-bind:class="{ active: $route.path==='/guoguo' }">
-          <router-link to='/guoguo'>蝈蝈</router-link>
-        </li>
-        <li v-bind:class="{ active: $route.path==='/transform' }">
-          <router-link to='/transform'>转换</router-link>
-        </li>
     </ul>
   </header>
 </template>
